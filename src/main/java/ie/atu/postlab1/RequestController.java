@@ -1,10 +1,7 @@
 package ie.atu.postlab1;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -18,7 +15,15 @@ public class RequestController {
 
     //Using a get request
     @GetMapping("/greet/{name}")
-    public String greetByName(@PathVariable String name) {
+    public String greetByName(@PathVariable String name)
+    {
     return "Hello " + name + "!";
+    }
+
+    //Using a get request
+    @GetMapping("/details")
+    public String details(@RequestParam String name, @RequestParam int age)
+    {
+    return "Name: " + name + ", Age: " + age;
     }
 }
