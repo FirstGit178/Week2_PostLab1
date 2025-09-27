@@ -10,7 +10,7 @@ public class Calculator {
         this.num1 = num1;
         this.num2 = num2;
         this.operation = operation;
-        this.result = calculateTotal();
+        this.result = 0;
     }
 
     public double getNum1() {
@@ -21,7 +21,7 @@ public class Calculator {
         return num2;
     }
 
-    public String getOperatation() {
+    public String getOperation() {
         return operation;
     }
 
@@ -30,11 +30,18 @@ public class Calculator {
     }
     public void calculateTotal(){
         switch (operation){
-            case "add ":
-                //num2 + num1 = result;    //Why was this wrong???????
+            case "add":
                result = num2 + num1 ;
+               break;
+            case "subtract":
+                result = num2 - num1 ;
                 break;
-
+            case "multiply":
+                result = num2 * num1 ;
+                break;
+            case "divide":
+                result = num2 / num1 ;
+                break;
             default:
                 System.out.println("Error");
 
