@@ -31,16 +31,21 @@ public class Calculator {
     public void calculateTotal(){
         switch (operation){
             case "add":
-               result = num2 + num1 ;
+               result = num1 + num2 ;
                break;
             case "subtract":
-                result = num2 - num1 ;
+                result = num1 - num2 ;
                 break;
             case "multiply":
-                result = num2 * num1 ;
+                result = num1 * num2 ;
                 break;
             case "divide":
-                result = num2 / num1 ;
+                if(num2 == 0) {
+                    System.out.println("Can't divide by zero");
+                }
+                else{
+                    result = num1 / num2;
+                }
                 break;
             default:
                 System.out.println("Error");
